@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+
+    <style>
+        #ordenado1 {
+            grid-row-start: 1;
+            grid-column-start: 4;
+            grid-column-end: 6;
+        }
+
+        #ordenado2 {
+            grid-row-start: 1;
+            grid-column-start: 7;
+            grid-column-end: 9;
+            animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        }
+
+        #ordenado3 {
+            grid-row-start: 1;
+            grid-column-start: 1;
+            grid-column-end: 3;
+            animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        }
+
+        @-webkit-keyframes slide-in-left {
+            0% {
+                -webkit-transform: translateX(-1000px);
+                transform: translateX(-1000px);
+                opacity: 0;
+            }
+
+            100% {
+                -webkit-transform: translateX(0);
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slide-in-left {
+            0% {
+                -webkit-transform: translateX(-1000px);
+                transform: translateX(-1000px);
+                opacity: 0;
+            }
+
+            100% {
+                -webkit-transform: translateX(0);
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @-webkit-keyframes slide-in-right {
+            0% {
+                -webkit-transform: translateX(1000px);
+                transform: translateX(1000px);
+                opacity: 0;
+            }
+
+            100% {
+                -webkit-transform: translateX(0);
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slide-in-right {
+            0% {
+                -webkit-transform: translateX(1000px);
+                transform: translateX(1000px);
+                opacity: 0;
+            }
+
+            100% {
+                -webkit-transform: translateX(0);
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="h-[100vh] w-full bg-blue-100 flex justify-center items-center">
+        <div class="bg-white w-96 h-96 flex justify-center items-center relative">
+            <div class="absolute z-50 right-0 hover:cursor-pointer" onclick="direita()">
+                <h1 class="text-5xl">></h1>
+            </div>
+            <div class="absolute z-50 left-0 hover:cursor-pointer" onclick="esquerda()">
+                <h1 class="text-5xl">
+                    <</h1>
+            </div>
+            <div class="grid grid-cols-8 grid-rows-1 absolute w-[60rem] h-[90%]">
+                <!-- Imagem 1 -->
+                <div class="w-full bg-green-200" id="ordenado1">
+                    <img class="w-full h-full"
+                        src="https://assets.isu.pub/document-structure/240401195043-c12669668af0a141f0253faea592d27c/v1/cf1d847f9829e5b797231226f20ddc5c.jpeg"
+                        alt="">
+                </div>
+                <!-- Imagem 2 -->
+                <div class="w-full bg-green-200" id="ordenado2"> <!-- Alterar a ordem para 3 -->
+                    <img class="w-full h-full"
+                        src="https://imagens-revista.vivadecora.com.br/uploads/2016/10/casas-bonitas-decoracao-casa-de-madeira-piscina-com-borda-infinita-e-mobiliario-de-couro-revistavd-187155-proportional-height_cover_medium-e1560367947480.jpg"
+                        alt="">
+                </div>
+                <!-- Imagem 3 -->
+                <div class="w-full bg-green-200" id="ordenado3"> <!-- Alterar a ordem para 2 -->
+                    <img class="w-full h-full" src="pessoa.png" alt="">
+                </div>
+            </div>
+
+
+        </div>
+    </main>
+</body>
+<script src="main.js"></script>
+
+</html>
